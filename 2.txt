@@ -1,0 +1,25 @@
+./sdriver.pl -t trace12.txt -s ./tshref -a "-p"
+#
+# trace12.txt - Forward SIGTSTP to every process in foreground process group
+#
+tsh> ./mysplit 4
+Job [1] (45839) stopped by signal 20
+tsh> jobs
+[1] (45839) Stopped ./mysplit 4 
+tsh> /bin/ps a
+    PID TTY      STAT   TIME COMMAND
+    724 tty2     Ssl+  15:07 /usr/lib/Xorg -nolisten tcp -background none -seat seat0 vt2 -auth /run/sddm/xauth_PBAYEa -noreset -displayfd 16
+  42030 pts/1    Ss+    0:00 /usr/bin/bash --init-file /home/dhruvadeep/Development/vscode/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+  42271 pts/2    Ss+    0:00 /usr/bin/bash --init-file /home/dhruvadeep/Development/vscode/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+  42475 pts/3    Ss+    0:00 /usr/bin/bash --init-file /home/dhruvadeep/Development/vscode/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+  42842 pts/4    Ss     0:01 /bin/zsh
+  42849 pts/4    S      0:00 /bin/zsh
+  42859 pts/4    S      0:00 /bin/zsh
+  42860 pts/4    Sl     0:00 /usr/share/zsh-theme-powerlevel10k/gitstatus/usrbin/gitstatusd -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 32
+  42861 pts/4    S      0:00 /bin/zsh
+  45835 pts/4    S+     0:00 make rtest12
+  45836 pts/4    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace12.txt -s ./tshref -a -p
+  45837 pts/4    S+     0:00 ./tshref -p
+  45839 pts/4    T      0:00 ./mysplit 4
+  45840 pts/4    T      0:00 ./mysplit 4
+  45866 pts/4    R      0:00 /bin/ps a
